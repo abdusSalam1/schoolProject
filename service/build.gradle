@@ -1,0 +1,8 @@
+description """com.sms.service"""
+
+dependencies {
+    compile(
+            project(':domain'),
+            project(':repository')
+    )
+}

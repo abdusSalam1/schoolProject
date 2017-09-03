@@ -1,0 +1,13 @@
+description """web"""
+
+ext {
+    springSecurityGroup = 'org.springframework.security'
+    springSecurityVersion = '4.0.3.RELEASE'
+}
+
+dependencies {
+    compile(
+            project(":service"),
+            ["$springGroup:spring-webmvc:$springVersion"],
+    )
+}

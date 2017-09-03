@@ -1,0 +1,8 @@
+description """repository"""
+
+dependencies {
+    compile(
+            project(':domain'),
+            ['org.springframework.data:spring-data-mongodb:1.9.5.RELEASE']
+    )
+}
