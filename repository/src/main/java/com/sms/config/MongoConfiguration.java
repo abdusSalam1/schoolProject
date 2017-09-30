@@ -21,7 +21,7 @@ import java.util.List;
  */
 
 @Configuration
-@EnableMongoRepositories(basePackages = {"com.ourtimesheet.repositorydo"})
+@EnableMongoRepositories(basePackages = {"com.sms.repositorydo"})
 @PropertySource("classpath:mongo.properties")
 public class MongoConfiguration {
 

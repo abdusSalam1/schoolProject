@@ -1,1 +1,7 @@
 description """domain"""
+
+dependencies {
+    compile(
+            ['org.springframework.data:spring-data-mongodb:1.9.5.RELEASE']
+    )
+}

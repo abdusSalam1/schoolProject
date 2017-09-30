@@ -1,6 +1,9 @@
 package com.sms.config;
 
 import com.mongodb.MongoClient;
+import com.sms.repository.EmployeeRepository;
+import com.sms.repository.EmployeeRepositoryImpl;
+import com.sms.repositorydo.EmployeeDORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +32,7 @@ import java.util.Set;
  * Created by Abdus Salam on 3/9/17.
  */
 @Configuration
-@Import({MongoConfiguration.class})
+@Import( {MongoConfiguration.class})
 public class PersistenceConfiguration {
 
     @Autowired
@@ -37,6 +40,12 @@ public class PersistenceConfiguration {
 
     @Autowired
     private MongoClient mongoClient;
+
+    @Bean
+    @Autowired
+    public EmployeeRepository employeeRepository(EmployeeDORepository employeeDORepository) {
+        return new EmployeeRepositoryImpl(employeeDORepository);
+    }
 
     @Bean
     MongoTemplate mongoTemplate() throws Exception {
@@ -66,13 +75,13 @@ public class PersistenceConfiguration {
 
         if (StringUtils.hasText(basePackage)) {
             ClassPathScanningCandidateComponentProvider componentProvider = new ClassPathScanningCandidateComponentProvider(
-                    false);
+                false);
             componentProvider.addIncludeFilter(new AnnotationTypeFilter(Document.class));
             componentProvider.addIncludeFilter(new AnnotationTypeFilter(Persistent.class));
 
             for (BeanDefinition candidate : componentProvider.findCandidateComponents(basePackage)) {
                 initialEntitySet.add(ClassUtils.forName(candidate.getBeanClassName(),
-                        AbstractMongoConfiguration.class.getClassLoader()));
+                    AbstractMongoConfiguration.class.getClassLoader()));
             }
         }
         return initialEntitySet;
