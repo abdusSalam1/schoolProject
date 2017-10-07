@@ -21,7 +21,7 @@ public class EmployeeController {
     private EmployeeHandler employeeHandler;
 
     @ResponseBody
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.HEAD)
     public HttpStatus saveEmployee(@RequestBody EmployeeModel employeeModel) {
         return employeeHandler.save(employeeModel);
     }
