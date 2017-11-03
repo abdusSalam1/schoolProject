@@ -16,7 +16,9 @@ subprojects {
 
     dependencies {
         compile(
-                ["$springGroup:spring-context:$springVersion"]
+                ["$springGroup:spring-context:$springVersion"],
+                ['org.slf4j:slf4j-api:1.7.16'],
+                ['org.slf4j:slf4j-simple:1.7.16']
         )
     }
 }
