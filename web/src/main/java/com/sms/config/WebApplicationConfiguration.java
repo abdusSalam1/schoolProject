@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.sms.controller"})
 @Configuration
-@Import({ServiceConfiguration.class, ControllerAspectConfig.class})
+@Import({ServiceConfiguration.class})
 public class WebApplicationConfiguration {
 
     @Bean

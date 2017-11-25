@@ -55,37 +55,36 @@ public class PersistenceConfiguration {
     @Bean
     MappingMongoConverter mappingMongoConverter() throws Exception {
         DbRefResolver dbRefResolver = new DefaultDbRefResolver(new SimpleMongoDbFactory(mongoClient, defaultDatabaseName));
-        MappingMongoConverter converter = new MappingMongoConverter(dbRefResolver, mongoMappingContext());
-        return converter;
+        return new MappingMongoConverter(dbRefResolver, new MongoMappingContext());
     }
 
-    @Bean
-    MongoMappingContext mongoMappingContext() throws ClassNotFoundException {
-        MongoMappingContext mappingContext = new MongoMappingContext();
-        mappingContext.setInitialEntitySet(getInitialEntitySet());
-        mappingContext.setFieldNamingStrategy(fieldNamingStrategy());
-
-        return mappingContext;
-    }
-
-    private Set<Class<?>> getInitialEntitySet() throws ClassNotFoundException {
-
-        String basePackage = getMappingBasePackage();
-        Set<Class<?>> initialEntitySet = new HashSet<Class<?>>();
-
-        if (StringUtils.hasText(basePackage)) {
-            ClassPathScanningCandidateComponentProvider componentProvider = new ClassPathScanningCandidateComponentProvider(
-                false);
-            componentProvider.addIncludeFilter(new AnnotationTypeFilter(Document.class));
-            componentProvider.addIncludeFilter(new AnnotationTypeFilter(Persistent.class));
-
-            for (BeanDefinition candidate : componentProvider.findCandidateComponents(basePackage)) {
-                initialEntitySet.add(ClassUtils.forName(candidate.getBeanClassName(),
-                    AbstractMongoConfiguration.class.getClassLoader()));
-            }
-        }
-        return initialEntitySet;
-    }
+//    @Bean
+//    MongoMappingContext mongoMappingContext() throws ClassNotFoundException {
+//        MongoMappingContext mappingContext = new MongoMappingContext();
+//       // mappingContext.setInitialEntitySet(getInitialEntitySet());
+//       // mappingContext.setFieldNamingStrategy(fieldNamingStrategy());
+//
+//        return mappingContext;
+//    }
+//
+//    private Set<Class<?>> getInitialEntitySet() throws ClassNotFoundException {
+//
+//        String basePackage = getMappingBasePackage();
+//        Set<Class<?>> initialEntitySet = new HashSet<>();
+//
+//        if (StringUtils.hasText(basePackage)) {
+//            ClassPathScanningCandidateComponentProvider componentProvider = new ClassPathScanningCandidateComponentProvider(
+//                false);
+//            componentProvider.addIncludeFilter(new AnnotationTypeFilter(Document.class));
+//            componentProvider.addIncludeFilter(new AnnotationTypeFilter(Persistent.class));
+//
+//            for (BeanDefinition candidate : componentProvider.findCandidateComponents(basePackage)) {
+//                initialEntitySet.add(ClassUtils.forName(candidate.getBeanClassName(),
+//                    AbstractMongoConfiguration.class.getClassLoader()));
+//            }
+//        }
+//        return initialEntitySet;
+//    }
 
     private FieldNamingStrategy fieldNamingStrategy() {
         return PropertyNameFieldNamingStrategy.INSTANCE;
