@@ -83,7 +83,7 @@ angular.module('xenon.services', []).
 
 		this.prepareSidebarMenu = function()
 		{
-			var dashboard    = this.addItem('Dashboard', 		'/app/dashboard', 			'linecons-cog');
+			var dashboard    =  this.addItem('Dashboard', 		'/app/dashboard', 			'linecons-cog');
             var test    = this.addItem('Test', 		'/app/test', 			'linecons-pencil');
 			// var layouts      = this.addItem('Layout & Skins',	'/app/layout-and-skins',	'linecons-desktop');
 			// var ui_elements  = this.addItem('UI Elements', 		'/app/ui', 					'linecons-note');
