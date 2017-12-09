@@ -83,8 +83,8 @@ angular.module('xenon.services', []).
 
 		this.prepareSidebarMenu = function()
 		{
-			var dashboard    = this.addItem('Dashboard', 		'/app/dashboard', 			'linecons-cog');
-            var test    = this.addItem('Test', 		'/app/test', 			'linecons-pencil');
+			var dashboard    = this.addItem('Dashboard', 		'/dashboard-variant-4', 			'linecons-cog');
+            var extra    = this.addItem('Tests', 		'/app/extra', 			'linecons-pencil');
 			// var layouts      = this.addItem('Layout & Skins',	'/app/layout-and-skins',	'linecons-desktop');
 			// var ui_elements  = this.addItem('UI Elements', 		'/app/ui', 					'linecons-note');
 			// var widgets  	 = this.addItem('Widgets', 			'/app/widgets', 			'linecons-star');
@@ -100,7 +100,7 @@ angular.module('xenon.services', []).
 				// dashboard.addItem('Dashboard 1', 	'-/variant-1'); // "-/" will append parents link
 				// dashboard.addItem('Dashboard 2', 	'-/variant-2');
 				// dashboard.addItem('Dashboard 3', 	'-/variant-3');
-				dashboard.addItem('Dashboard', 	'-/variant-4');
+				//dashboard.addItem('Dashboard', 	'-/variant-4');
 				// dashboard.addItem('Update Hightlights', '/app/update-highlights').setLabel('v1.3', 'pink');
 
 
@@ -157,8 +157,8 @@ angular.module('xenon.services', []).
 				// extra.addItem('Notes', 						'-/notes');
 				// extra.addItem('Image Crop', 				'-/image-crop');
 				// extra.addItem('Portlets', 					'-/portlets');
-				// extra.addItem('Blank Page', 				'-/blank-page');
-				// extra.addItem('Search', 					'-/search');
+				extra.addItem('Interest Test', 				'-/blank-page');
+			    extra.addItem('Search', 					'-/search');
 				// extra.addItem('Invoice', 					'-/invoice');
 				// extra.addItem('404 Page', 					'-/page-404');
 				// extra.addItem('Tocify', 					'-/tocify');

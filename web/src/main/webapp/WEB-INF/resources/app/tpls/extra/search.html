@@ -1,175 +1,122 @@
 
-
-	<page-title ng-if="layoutOptions.pageTitles" title="Search" description="Search results separated on tabs"></page-title>
-
-
-
 <!-- Search Page -->
 <section class="search-env" ng-init="current_tab = 'web'; searchString = ''">
-	
-	<div class="row">
-		<div class="col-md-12">
-			
-			<form method="get" action="" enctype="application/x-www-form-urlencoded">
-				<input type="text" class="form-control input-lg" placeholder="Search..." name="s" ng-model="searchString" />
-				
-				<button type="submit" class="btn-unstyled">
-					<i class="linecons-search"></i>
-				</button>
-			</form>
-			
-			<div class="search-results">
-			
-				<div class="tabs-vertical-env">
-				
-					<ul class="nav tabs-vertical">
-						<li ng-class="{active: current_tab == 'web'}">
-							<a href="" ng-click="current_tab = 'web'">
-								<i class="fa-globe visible-xs"></i>
-								<span class="hidden-xs">Web</span>
-							</a>
-						</li>
-						<li ng-class="{active: current_tab == 'images'}">
-							<a href="" ng-click="current_tab = 'images'">
-								<i class="fa-globe visible-xs"></i>
-								<span class="hidden-xs">Images</span>
-							</a>
-						</li>
-						<li ng-class="{active: current_tab == 'documents'}">
-							<a href="" ng-click="current_tab = 'documents'">
-								<i class="fa-globe visible-xs"></i>
-								<span class="hidden-xs">Documents</span>
-							</a>
-						</li>
-						<li ng-class="{active: current_tab == 'videos'}">
-							<a href="" ng-click="current_tab = 'videos'">
-								<i class="fa-globe visible-xs"></i>
-								<span class="hidden-xs">Videos</span>
-							</a>
-						</li>
-						<li ng-class="{active: current_tab == 'contacts'}">
-							<a href="" ng-click="current_tab = 'contacts'">
-								<i class="fa-globe visible-xs"></i>
-								<span class="hidden-xs">Contacts</span>
-							</a>
-						</li>
-					</ul>
-					
-					<div class="tab-content">
-						
-						<!-- Sample Search Results Tab -->
-						<div class="tab-pane" ng-class="{active: current_tab == 'web'}">
-							
-							<h2>
-								Search results for &quot;<span class="text-success"><span ng-show="searchString">{{searchString}}</span><span ng-show="searchString.length == 0">laborator</span></span>&quot;
-								
-								<small>About 15,520,000,000 results (0.34 seconds)</small>
-							</h2>
-							
-							
-							<ul class="results list-unstyled">
-								
-								<li>
-									<h3>
-										<a href="">UI Elements</a>
-									</h3>
-									
-									<p>Day handsome addition horrible sensible goodness two contempt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity. Delay rapid joy share allow age manor six. Went why far saw many knew. Exquisite excellent son gentleman acuteness her. Do is voice total power mr ye might round still.</p>
-									
-									<a href="" class="link">extra-search.html</a>
-								</li>
-								
-								<li>
-									<h3>
-										<a href="">Inbox</a>
-									</h3>
-									
-									<p>Day handsome addition horrible sensible goodness two contempt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity. Delay rapid joy share allow age manor six. Went why far saw many knew. Exquisite excellent son gentleman acuteness her. Do is voice total power mr ye might round still.</p>
-									
-									<a href="" class="link">extra-search.html</a>
-								</li>
-								
-								<li>
-									<h3>
-										<a href="">Layout Options</a>
-									</h3>
-									
-									<p>Day handsome addition horrible sensible goodness two contempt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity. Delay rapid joy share allow age manor six. Went why far saw many knew. Exquisite excellent son gentleman acuteness her. Do is voice total power mr ye might round still.</p>
-									
-									<a href="" class="link">extra-search.html</a>
-								</li>
-								
-								<li>
-									<h3>
-										<a href="">Panels</a>
-									</h3>
-									
-									<p>Day handsome addition horrible sensible goodness two contempt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity. Delay rapid joy share allow age manor six. Went why far saw many knew. Exquisite excellent son gentleman acuteness her. Do is voice total power mr ye might round still.</p>
-									
-									<a href="" class="link">extra-search.html</a>
-								</li>
-								
-							</ul>
-							
-							<!-- Pagination Position -->
-							<div class="text-center">
-								<ul class="pagination pagination-sm">
-									<li>
-										<a href="">
-											<i class="fa-angle-left"></i>
-										</a>
-									</li>
-									<li class="active">
-										<a href="">1</a>
-									</li>
-									<li>
-										<a href="">2</a>
-									</li>
-									<li>
-										<a href="">3</a>
-									</li>
-									<li>
-										<a href="">4</a>
-									</li>
-									<li>
-										<a href="">5</a>
-									</li>
-									<li>
-										<a href="">
-											<i class="fa-angle-right"></i>
-										</a>
-									</li>
-								</ul>
-							</div>
-							
-						</div>
-						
-						<!-- Search Results Tab -->
-						<div class="tab-pane" ng-class="{active: current_tab == 'images'}">
-							Search results about images...
-						</div>
-						
-						<!-- Search Results Tab -->
-						<div class="tab-pane" ng-class="{active: current_tab == 'documents'}">
-							Search results about documents...
-						</div>
-						
-						<!-- Search Results Tab -->
-						<div class="tab-pane" ng-class="{active: current_tab == 'videos'}">
-							Search results about videos...
-						</div>
-						
-						<!-- Search Results Tab -->
-						<div class="tab-pane" ng-class="{active: current_tab == 'contacts'}">
-							Search results about contacts...
+	<div ng-controller="instituteController as ic">
+	<div class="page-title">
+
+		<div class="title-env">
+			<h1 class="title">Percentage</h1>
+			<p class="description">Complete the form to know about available institute options</p>
+		</div>
+
+		<div class="breadcrumb-env">
+
+			<ol class="breadcrumb bc-1">
+				<li>
+					<a href="dashboard-1.html"><i class="fa-home"></i>Home</a>
+				</li>
+				<li>
+
+					<a href="test.html">Test</a>
+				</li>
+				<li class="active">
+
+					<strong>Search</strong>
+				</li>
+			</ol>
+
+		</div>
+
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Percentage Based Search</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">–</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					×
+				</a>
+			</div>
+		</div>
+		<div class="panel-body">
+
+			<form role="form" class="form-horizontal" ng-if="showform">
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="field-1">Total marks</label>
+
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="field-1" placeholder="total marks">
+					</div>
+				</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="field-1">Obtained marks</label>
+
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="field-2" placeholder="obtained marks">
 						</div>
 					</div>
-					
+					<div class="form-group">
+					<label class="col-sm-2 control-label">Select Degree</label>
+
+					<div class="col-sm-10">
+						<select class="form-control">
+							<option>BSCS</option>
+							<option>HIGH SCHOOL</option>
+							<option>BSC</option>
+							<option>MASTER</option>
+						</select>
+					</div>
 				</div>
-				
+
+				<button ng-init="showContent = false;" class="btn btn-secondary pull-right" ng-click="ic.getInstitutes()">search
+				</button>
+			</form>
+
+			<div class="col-sm-12" ng-if="showtable">
+
+				<table class="table responsive">
+					<thead>
+					<tr>
+						<th>#</th>
+						<th>University Name</th>
+						<th>Program Name</th>
+						<th>Action</th>
+
+					</tr>
+					</thead>
+
+					<tbody>
+					<tr>
+						<td>1</td>
+						<td>IUB</td>
+						<td>BSCS</td>
+						<td><a href="loading-progress.html">more info</a></td>
+					</tr>
+
+					<tr>
+						<td>2</td>
+						<td>NUST</td>
+						<td>Software Engineering</td>
+						<td><a href="loading-progress.html">more info</a></td>
+					</tr>
+
+					<tr>
+						<td>3</td>
+						<td>LUMS</td>
+						<td>Electronics</td>
+						<td><a href="loading-progress.html">more info</a></td>
+					</tr>
+					</tbody>
+				</table>
+
 			</div>
-			
 		</div>
+	</div>
 	</div>
 	
 </section>

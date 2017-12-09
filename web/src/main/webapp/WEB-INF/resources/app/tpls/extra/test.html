@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<div ng-controller="instituteController as ic">
+<div class="page-title">
+
+    <div class="title-env">
+        <h1 class="title">Interest Test</h1>
+        <p class="description">Complete the test to know about your Intrests</p>
+    </div>
+
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1">
+            <li>
+                <a href="dashboard-1.html"><i class="fa-home"></i>Home</a>
+            </li>
+            <li>
+
+                <a href="test.html">Test</a>
+            </li>
+            <li class="active">
+
+                <strong>Interest Test</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+<form role="form" class="form-horizontal" >
+    <div ng-if="showform">
+
+        <ul>
+            <li>
+                <div><p class=""> Your uncle's computer isn't working. He needs help. What do you do?​ </p></div>
+            </li>
+        </ul>
+
+        <div class="col-sm-10">
+            <select class="form-control" ng-model="answer">
+                <option value="A">I ask him what problems he's having. Then try to figure out solution.</option>
+                <option value="B">I tell him to call the computer manufacturer's helpline.</option>
+                <option value="C">I go to his house and try turning the computer on and off.</option>
+                <option value="D">I head over to his house to call the computer manufacturer's helpline.</option>
+            </select>
+        </div>
+        <button ng-init="showContent = false;" class="btn btn-secondary pull-right" ng-click="ic.getInstitutes()">search
+        </button>
+    </div>
+
+</form>
+    <div class="panel panel-default" ng-if="showtable">
+        <div class="panel-heading">
+            <h3 class="panel-title">Percentage Based Form</h3>
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">–</span>
+                    <span class="expand-icon">+</span>
+                </a>
+                <a href="#" data-toggle="remove">
+                    ×
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+<div class="col-sm-12" >
+
+    <table class="table responsive">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>University Name</th>
+            <th>Program Name</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>IUB</td>
+            <td>BSCS</td>
+            <td><a href="loading-progress.html">more info</a></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>NUST</td>
+            <td>Software Engineering</td>
+            <td><a href="loading-progress.html">more info</a></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>LUMS</td>
+            <td>Electronics</td>
+            <td><a href="loading-progress.html">more info</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

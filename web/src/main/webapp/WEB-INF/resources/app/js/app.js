@@ -31,7 +31,7 @@ app.run(function()
 
 app.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASSETS){
 
-	$urlRouterProvider.otherwise('/app/dashboard-variant-1');
+	$urlRouterProvider.otherwise('/app/dashboard-variant-4');
 
 	$stateProvider.
 		// Main Layout Structure
@@ -609,15 +609,16 @@ app.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASS
 		}).
 		state('app.extra-blank-page', {
 			url: '/extra-blank-page',
-			templateUrl: appHelper.templatePath('extra/blank-page')
+			templateUrl: appHelper.templatePath('extra/test')
 		}).
 		state('app.extra-maps-google', {
 			url: '/extra-maps-google',
 			templateUrl: appHelper.templatePath('extra/maps-google'),
-			resolve: {
+		controller : "instituteController as ic",
+		resolve: {
 				resources: function($ocLazyLoad){
 					return $ocLazyLoad.load([
-						ASSETS.core.googleMapsLoader,
+						ASSETS.core.googleMapsLoader
 					]);
 				},
 			}
