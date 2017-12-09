@@ -1,10 +1,11 @@
 package com.sms.handler;
 
-import com.sms.Model.UniversitySearchModel;
-import com.sms.expert.TestExpert;
+import com.sms.Model.QAModel;
+import com.sms.domain.InterestTestResult;
+import com.sms.domain.TestType;
+import com.sms.factory.TestExpertFactory;
 import com.sms.service.UniversityService;
 import com.sms.university.University;
-import com.sms.university.UniversitySearchCriteria;
 
 
 import java.util.List;
@@ -15,13 +16,15 @@ import java.util.List;
 public class UniversityHandler {
 
     private final UniversityService universityService;
+    private final TestExpertFactory testExpertFactory;
 
-    public UniversityHandler(UniversityService universityService) {
+    public UniversityHandler(UniversityService universityService, TestExpertFactory testExpertFactory) {
         this.universityService = universityService;
+        this.testExpertFactory = testExpertFactory;
     }
 
-    public List<University> findUniversitiesBySearchCriteria(UniversitySearchModel universitySearchModel) {
-        UniversitySearchCriteria universitySearchCriteria = null;
-        return universityService.findUniversitiesBySearchCriteria(universitySearchCriteria);
+    public List<University> findUniversitiesByInterestTest(List<QAModel> qaModels) {
+        InterestTestResult interestTestResult = (InterestTestResult) testExpertFactory.createExpert(TestType.INTEREST).getResult(qaModels);
+        return universityService.findUniversitiesByInterest(interestTestResult);
     }
 }

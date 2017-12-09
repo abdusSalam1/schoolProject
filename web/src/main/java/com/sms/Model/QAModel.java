@@ -6,13 +6,14 @@ package com.sms.Model;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.sms.domain.QA;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
         property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = IntrestBasedQA.class, name = "intrest")})
+        @JsonSubTypes.Type(value = InterestBasedQAModel.class, name = "interestTest")})
 public abstract class QAModel {
 
     private String questionId;
@@ -41,4 +42,6 @@ public abstract class QAModel {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    public abstract QA toQA();
 }

@@ -21,6 +21,6 @@ public class WebApplicationConfiguration {
     @Bean
     @Autowired
     public UniversityHandler employeeHandler(UniversityService universityService) {
-        return new UniversityHandler(universityService);
+        return new UniversityHandler(universityService, testExpertFactory);
     }
 }

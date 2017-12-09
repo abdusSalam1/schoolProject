@@ -3,15 +3,15 @@ package com.sms.domain;
 /**
  * Created by umars on 12/9/2017.
  */
-public class IntrestTestResult {
+public class InterestTestResult {
 
     private String universityName;
     private String course;
 
-    public IntrestTestResult() {
+    public InterestTestResult() {
     }
 
-    public IntrestTestResult(String universityName, String course) {
+    public InterestTestResult(String universityName, String course) {
         this.universityName = universityName;
         this.course = course;
     }

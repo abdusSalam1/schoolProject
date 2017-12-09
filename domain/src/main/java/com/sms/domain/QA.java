@@ -7,6 +7,11 @@ public class QA {
      private String id;
      private String answer;
 
+    public QA(String id, String answer) {
+        this.id = id;
+        this.answer = answer;
+    }
+
     public String getId() {
         return id;
     }

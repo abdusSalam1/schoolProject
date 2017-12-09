@@ -1,10 +1,13 @@
 package com.sms.service;
 
+import com.sms.domain.InterestTestResult;
 import com.sms.repository.UniversityRepository;
 import com.sms.university.University;
-import com.sms.university.UniversitySearchCriteria;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by Abdus Salam on 9/30/2017.
@@ -23,7 +26,14 @@ public class UniversityServiceImpl implements UniversityService {
     }
 
     @Override
-    public List<University> findUniversitiesBySearchCriteria(UniversitySearchCriteria universitySearchCriteria) {
-        return universityRepository.findBySearchCriteria(universitySearchCriteria);
+    public List<University> findUniversitiesByInterest(InterestTestResult interestTestResult) {
+        switch (interestTestResult.getUniversityName()) {
+            case "IUB":
+                return Arrays.asList(new University(UUID.randomUUID(), "IUB"));
+            case "NUST":
+                return Arrays.asList(new University(UUID.randomUUID(), "NUST"));
+            default:
+                return new ArrayList<>();
+        }
     }
 }

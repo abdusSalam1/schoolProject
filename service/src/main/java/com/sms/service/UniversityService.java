@@ -1,7 +1,7 @@
 package com.sms.service;
 
+import com.sms.domain.InterestTestResult;
 import com.sms.university.University;
-import com.sms.university.UniversitySearchCriteria;
 
 import java.util.List;
 
@@ -12,5 +12,5 @@ public interface UniversityService {
 
     void save(University university);
 
-    List<University> findUniversitiesBySearchCriteria(UniversitySearchCriteria universitySearchCriteria);
+    List<University> findUniversitiesByInterest(InterestTestResult universitySearchCriteria);
 }

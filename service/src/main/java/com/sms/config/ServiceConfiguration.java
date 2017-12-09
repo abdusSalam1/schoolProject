@@ -1,7 +1,5 @@
 package com.sms.config;
 
-import com.sms.expert.IntrestTestExpert;
-import com.sms.expert.TestExpert;
 import com.sms.repository.UniversityRepository;
 import com.sms.service.UniversityService;
 import com.sms.service.UniversityServiceImpl;

@@ -1,6 +1,6 @@
 package com.sms.controller;
 
-import com.sms.Model.UniversitySearchModel;
+import com.sms.Model.QAModel;
 import com.sms.handler.UniversityHandler;
 import com.sms.university.University;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,8 @@ public class UniversityController {
     private UniversityHandler universityHandler;
 
     @ResponseBody
-    @RequestMapping(method = RequestMethod.GET)
-    public List<University> findUniversitiesBySearchCriteria(@RequestBody UniversitySearchModel universitySearchModel) {
-        return universityHandler.findUniversitiesBySearchCriteria(universitySearchModel);
+    @RequestMapping(value = "/interest-test", method = RequestMethod.GET)
+    public List<University> findUniversitiesByInterestTest(@RequestBody List<QAModel> qaModels) {
+        return universityHandler.findUniversitiesByInterestTest(qaModels);
     }
 }
