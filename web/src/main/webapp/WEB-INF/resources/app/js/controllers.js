@@ -46,8 +46,6 @@ angular.module('xenon.controllers', []).
 				isRight			: false,
 
 				isMenuOpenMobile: false,
-
-				// Added in v1.3
 				userProfile		: true
 			},
 			chat: {
@@ -66,7 +64,7 @@ angular.module('xenon.controllers', []).
 				userInfoNavbar	: ''
 			},
 			pageTitles: true,
-			userInfoNavVisible	: false
+			userInfoNavVisible	: true
 		};
 
 		$layout.loadOptionsFromCookies(); // remove this line if you don't want to support cookies that remember layout changes
@@ -151,7 +149,7 @@ angular.module('xenon.controllers', []).
 
 		// Full screen feature added in v1.3
 		$scope.isFullscreenSupported = Fullscreen.isSupported();
-		$scope.isFullscreen = Fullscreen.isEnabled() ? true : false;
+		$scope.isFullscreen = !!Fullscreen.isEnabled();
 
 		$scope.goFullscreen = function()
 		{
@@ -160,7 +158,7 @@ angular.module('xenon.controllers', []).
 			else
 				Fullscreen.all();
 
-			$scope.isFullscreen = Fullscreen.isEnabled() ? true : false;
+			$scope.isFullscreen = !!Fullscreen.isEnabled();
 		}
 
 	}).

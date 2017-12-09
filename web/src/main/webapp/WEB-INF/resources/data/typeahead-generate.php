@@ -1,5 +1,6 @@
 <?php
 /**
+ *
  *	Typeahead Auto Suggestions Generator
  *	
  *	Laborator.co

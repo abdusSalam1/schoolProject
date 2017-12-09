@@ -1,9 +1,9 @@
 package com.sms.config;
 
 import com.mongodb.MongoClient;
-import com.sms.repository.EmployeeRepository;
-import com.sms.repository.EmployeeRepositoryImpl;
-import com.sms.repositorydo.EmployeeDORepository;
+import com.sms.repository.UniversityRepository;
+import com.sms.repository.UniversityRepositoryImpl;
+import com.sms.repositorydo.UniversityDORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
@@ -43,8 +43,8 @@ public class PersistenceConfiguration {
 
     @Bean
     @Autowired
-    public EmployeeRepository employeeRepository(EmployeeDORepository employeeDORepository) {
-        return new EmployeeRepositoryImpl(employeeDORepository);
+    public UniversityRepository employeeRepository(UniversityDORepository universityDORepository) {
+        return new UniversityRepositoryImpl(universityDORepository);
     }
 
     @Bean

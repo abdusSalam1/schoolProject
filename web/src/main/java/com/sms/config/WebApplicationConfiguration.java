@@ -1,7 +1,7 @@
 package com.sms.config;
 
-import com.sms.handler.EmployeeHandler;
-import com.sms.service.EmployeeService;
+import com.sms.handler.UniversityHandler;
+import com.sms.service.UniversityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +20,7 @@ public class WebApplicationConfiguration {
 
     @Bean
     @Autowired
-    public EmployeeHandler employeeHandler(EmployeeService employeeService) {
-        return new EmployeeHandler(employeeService);
+    public UniversityHandler employeeHandler(UniversityService universityService) {
+        return new UniversityHandler(universityService);
     }
 }

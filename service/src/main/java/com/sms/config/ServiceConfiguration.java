@@ -1,8 +1,10 @@
 package com.sms.config;
 
-import com.sms.repository.EmployeeRepository;
-import com.sms.service.EmployeeService;
-import com.sms.service.EmployeeServiceImpl;
+import com.sms.expert.IntrestTestExpert;
+import com.sms.expert.TestExpert;
+import com.sms.repository.UniversityRepository;
+import com.sms.service.UniversityService;
+import com.sms.service.UniversityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +19,7 @@ public class ServiceConfiguration {
 
     @Bean
     @Autowired
-    public EmployeeService employeeService(EmployeeRepository employeeRepository) {
-        return new EmployeeServiceImpl(employeeRepository);
+    public UniversityService employeeService(UniversityRepository universityRepository) {
+        return new UniversityServiceImpl(universityRepository);
     }
 }
