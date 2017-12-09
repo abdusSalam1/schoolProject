@@ -1,8 +1,8 @@
 package com.sms.config;
 
 import com.sms.repository.UniversityRepository;
-import com.sms.service.UniversityService;
-import com.sms.service.UniversityServiceImpl;
+import com.sms.service.InstituteService;
+import com.sms.service.InstituteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ public class ServiceConfiguration {
 
     @Bean
     @Autowired
-    public UniversityService employeeService(UniversityRepository universityRepository) {
-        return new UniversityServiceImpl(universityRepository);
+    public InstituteService employeeService(UniversityRepository universityRepository) {
+        return new InstituteServiceImpl(universityRepository);
     }
 }

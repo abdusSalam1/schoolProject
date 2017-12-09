@@ -5,19 +5,19 @@ package com.sms.domain;
  */
 public class InterestTestResult {
 
-    private String universityName;
+    private String instituteName;
     private String course;
 
     public InterestTestResult() {
     }
 
-    public InterestTestResult(String universityName, String course) {
-        this.universityName = universityName;
+    public InterestTestResult(String instituteName, String course) {
+        this.instituteName = instituteName;
         this.course = course;
     }
 
-    public String getUniversityName() {
-        return universityName;
+    public String getInstituteName() {
+        return instituteName;
     }
 
     public String getCourse() {

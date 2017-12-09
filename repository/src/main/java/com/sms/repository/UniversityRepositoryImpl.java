@@ -1,7 +1,7 @@
 package com.sms.repository;
 
 import com.sms.repositorydo.UniversityDORepository;
-import com.sms.university.University;
+import com.sms.university.Institute;
 import com.sms.university.UniversitySearchCriteria;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Click Chain on 9/30/2017.
  */
-public class UniversityRepositoryImpl extends GenericRepository<University> implements UniversityRepository {
+public class UniversityRepositoryImpl extends GenericRepository<Institute> implements UniversityRepository {
 
 
     public UniversityRepositoryImpl(UniversityDORepository repository) {
@@ -17,7 +17,7 @@ public class UniversityRepositoryImpl extends GenericRepository<University> impl
     }
 
     @Override
-    public List<University> findBySearchCriteria(UniversitySearchCriteria universitySearchCriteria) {
+    public List<Institute> findBySearchCriteria(UniversitySearchCriteria universitySearchCriteria) {
         return null;
     }
 }

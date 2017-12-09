@@ -1,7 +1,6 @@
-package com.sms.Model;
+package com.sms.model;
 
 import com.sms.domain.InterestBasedTest;
-import com.sms.domain.QA;
 
 /**
  * Created by umars on 12/9/2017.

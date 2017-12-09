@@ -1,4 +1,4 @@
-package com.sms.Model;
+package com.sms.model;
 
 /**
  * Created by umars on 12/9/2017.

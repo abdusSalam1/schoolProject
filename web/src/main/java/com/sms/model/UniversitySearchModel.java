@@ -1,4 +1,4 @@
-package com.sms.Model;
+package com.sms.model;
 
 import java.util.ArrayList;
 import java.util.List;

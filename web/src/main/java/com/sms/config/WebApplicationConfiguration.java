@@ -1,7 +1,8 @@
 package com.sms.config;
 
-import com.sms.handler.UniversityHandler;
-import com.sms.service.UniversityService;
+import com.sms.factory.TestExpertFactory;
+import com.sms.handler.InstitutionHandler;
+import com.sms.service.InstituteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +21,7 @@ public class WebApplicationConfiguration {
 
     @Bean
     @Autowired
-    public UniversityHandler employeeHandler(UniversityService universityService) {
-        return new UniversityHandler(universityService, testExpertFactory);
+    public InstitutionHandler employeeHandler(InstituteService instituteService) {
+        return new InstitutionHandler(instituteService, new TestExpertFactory());
     }
 }

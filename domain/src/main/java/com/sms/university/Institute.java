@@ -9,12 +9,12 @@ import java.util.UUID;
 /**
  * Created by umars on 12/9/2017.
  */
-@Document(collection = "university")
-public class University extends Entity {
+@Document(collection = "institute")
+public class Institute extends Entity {
     private final String  name;
 
     @PersistenceConstructor
-    public University(UUID id, String name) {
+    public Institute(UUID id, String name) {
         super(id);
         this.name = name;
     }
