@@ -557,7 +557,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASS
 			templateUrl: appHelper.templatePath('extra/search')
 		}).
 		state('app.extra-invoice', {
-			url: '/extra-invoice',
+			url: '/extra-cost',
 			templateUrl: appHelper.templatePath('extra/invoice')
 		}).
 		state('app.extra-page-404', {
@@ -608,7 +608,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASS
 			templateUrl: appHelper.templatePath('extra/scrollable')
 		}).
 		state('app.extra-blank-page', {
-			url: '/extra-blank-page',
+			url: '/extra-test',
 			templateUrl: appHelper.templatePath('extra/test')
 		}).
 		state('app.extra-maps-google', {

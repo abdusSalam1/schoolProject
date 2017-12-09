@@ -85,7 +85,7 @@ angular.module('xenon.services', []).
 		{
 			var dashboard    = this.addItem('Dashboard', 		'/dashboard-variant-4', 			'linecons-cog');
             var extra    = this.addItem('Tests', 		'/app/extra', 			'linecons-pencil');
-			// var layouts      = this.addItem('Layout & Skins',	'/app/layout-and-skins',	'linecons-desktop');
+			 var search      = this.addItem('Search',	'/app/extra',	'linecons-search');
 			// var ui_elements  = this.addItem('UI Elements', 		'/app/ui', 					'linecons-note');
 			// var widgets  	 = this.addItem('Widgets', 			'/app/widgets', 			'linecons-star');
 			// var mailbox  	 = this.addItem('Mailbox', 			'/app/mailbox', 			'linecons-mail').setLabel('5', 'secondary', false);
@@ -157,9 +157,9 @@ angular.module('xenon.services', []).
 				// extra.addItem('Notes', 						'-/notes');
 				// extra.addItem('Image Crop', 				'-/image-crop');
 				// extra.addItem('Portlets', 					'-/portlets');
-				extra.addItem('Interest Test', 				'-/blank-page');
-			    extra.addItem('Search', 					'-/search');
-				// extra.addItem('Invoice', 					'-/invoice');
+				extra.addItem('Interest Test', 				'-/test');
+			    search.addItem('marks', 					'-/search');
+				 search.addItem('Cost', 					'-/cost');
 				// extra.addItem('404 Page', 					'-/page-404');
 				// extra.addItem('Tocify', 					'-/tocify');
 				// extra.addItem('Loading Progress', 			'-/loading-progress');

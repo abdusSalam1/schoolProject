@@ -1,176 +1,109 @@
 
-
-	<page-title ng-if="layoutOptions.pageTitles" title="Invoice" description="Sample invoice and printable page"></page-title>
-
-
-<div class="panel panel-default">
-	<div class="panel-heading hidden-print">Invoice</div>
-	<div class="panel-body">
 		
 		<section class="invoice-env">
 		
 			<!-- Invoice header -->
-			<div class="invoice-header">
-				
-				<!-- Invoice Options Buttons -->
-				<div class="invoice-options hidden-print">
-					<a href="" class="btn btn-block btn-gray btn-icon btn-icon-standalone btn-icon-standalone-right text-left">
-						<i class="fa-envelope-o"></i>
-						<span>Send</span>
-					</a>
-					
-					<a href="" class="btn btn-block btn-secondary btn-icon btn-icon-standalone btn-icon-standalone-right btn-single text-left">
-						<i class="fa-print"></i>
-						<span>Print</span>
-					</a>
+			<div ng-controller="instituteController as ic">
+				<div class="page-title">
+
+					<div class="title-env">
+						<h1 class="title">Cost</h1>
+						<p class="description">know about available institute options</p>
+					</div>
+
+					<div class="breadcrumb-env">
+
+						<ol class="breadcrumb bc-1">
+							<li>
+								<a href="dashboard-1.html"><i class="fa-home"></i>Home</a>
+							</li>
+							<li>
+
+								<a href="test.html">search</a>
+							</li>
+							<li class="active">
+
+								<strong>Cost</strong>
+							</li>
+						</ol>
+
+					</div>
+
 				</div>
-				
-				<!-- Invoice Data Header -->
-				<div class="invoice-logo">
-				
-					<a href="" class="logo">
-						<img src="assets/images/logo-white-bg.png" class="img-responsive" />
-					</a>
-					
-					<ul class="list-unstyled">
-						<li class="upper">Invoice No. <strong>#5652256</strong></li>
-						<li>06 December 14</li>
-						<li>Prishtin&euml;, Kosovo</li>
-					</ul>
-					
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Percentage Based Search</h3>
+						<div class="panel-options">
+							<a href="#" data-toggle="panel">
+								<span class="collapse-icon">–</span>
+								<span class="expand-icon">+</span>
+							</a>
+							<a href="#" data-toggle="remove">
+								×
+							</a>
+						</div>
+					</div>
+					<div class="panel-body">
+
+						<form role="form" class="form-horizontal" ng-if="showform">
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="field-2">cost per smester</label>
+
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="field-2" placeholder="cost">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Select Degree</label>
+
+								<div class="col-sm-10">
+									<select class="form-control">
+										<option>BSCS</option>
+										<option>HIGH SCHOOL</option>
+										<option>BSC</option>
+										<option>MASTER</option>
+									</select>
+								</div>
+							</div>
+
+							<button ng-init="showContent = false;" class="btn btn-secondary pull-right" ng-click="ic.getInstitutes()">search
+							</button>
+						</form>
+
+						<div class="col-sm-12" ng-if="showtable">
+
+							<table class="table responsive">
+								<thead>
+								<tr>
+									<th>#</th>
+									<th>University Name</th>
+									<th>Program Name</th>
+									<th>Action</th>
+
+								</tr>
+								</thead>
+
+								<tbody>
+								<tr>
+									<td>1</td>
+									<td>IUB</td>
+									<td>BSCS</td>
+									<td><a href="http://www.iub.edu.pk">more info</a></td>
+								</tr>
+
+								<tr>
+									<td>2</td>
+									<td>NUST</td>
+									<td>Software Engineering</td>
+									<td><a href="http://www.nust.edu.pk/Pages/Default.aspx">more info</a></td>
+								</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
 				</div>
-				
-			</div>
-			
-			
-			<!-- Client and Payment Details -->
-			<div class="invoice-details">
-				
-				<div class="invoice-client-info">
-					<strong>Client</strong>
-					
-					<ul class="list-unstyled">
-						<li>John Doe </li>
-						<li>Mr Nilson Otto </li>
-						<li>FoodMaster Ltd</li>
-					</ul>
-					
-					<ul class="list-unstyled">		
-						<li>1982 OOP </li>
-						<li>Madrid, Spain </li>
-						<li>+1 (151) 225-4183</li>
-					</ul>
-				</div>
-				
-				<div class="invoice-payment-info">
-					<strong>Payment Details</strong>
-					
-					<ul class="list-unstyled">
-						<li>V.A.T Reg #: <strong>542554(DEMO)78</strong></li>
-						<li>Account Name: <strong>FoodMaster Ltd</strong> </li>
-						<li>SWIFT code: <strong>45454DEMO545DEMO</strong></li>
-					</ul>
-				</div>
-				
-			</div>
-			
-			
-			<!-- Invoice Entries -->
-			<table class="table table-bordered">
-				<thead>
-					<tr class="no-borders">
-						<th class="text-center hidden-xs">#</th>
-						<th width="60%" class="text-center">Product</th>
-						<th class="text-center hidden-xs">Quantity</th>
-						<th class="text-center">Price</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<tr>
-						<td class="text-center hidden-xs">1</td>
-						<td>On am we offices expense thought</td>
-						<td class="text-center hidden-xs">1</td>
-						<td class="text-right text-primary text-bold">$1,290</td>
-					</tr>
-					
-					<tr>
-						<td class="text-center hidden-xs">2</td>
-						<td>Up do view time they shot</td>
-						<td class="text-center hidden-xs">1</td>
-						<td class="text-right text-primary text-bold">$400</td>
-					</tr>
-					
-					<tr>
-						<td class="text-center hidden-xs">3</td>
-						<td>Way ham unwilling not breakfast</td>
-						<td class="text-center hidden-xs">1</td>
-						<td class="text-right text-primary text-bold">$550</td>
-					</tr>
-					
-					<tr>
-						<td class="text-center hidden-xs">4</td>
-						<td>Songs to an blush woman be sorry</td>
-						<td class="text-center hidden-xs">1</td>
-						<td class="text-right text-primary text-bold">$4020</td>
-					</tr>
-					
-					<tr>
-						<td class="text-center hidden-xs">5</td>
-						<td>Luckily offered article led lasting</td>
-						<td class="text-center hidden-xs">1</td>
-						<td class="text-right text-primary text-bold">$87</td>
-					</tr>
-					
-					<tr>
-						<td class="text-center hidden-xs">6</td>
-						<td>Of as by belonging therefore suspicion</td>
-						<td class="text-center hidden-xs">1</td>
-						<td class="text-right text-primary text-bold">$140</td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<!-- Invoice Subtotals and Totals -->
-			<div class="invoice-totals">
-				
-				<div class="invoice-subtotals-totals">
-					<span>
-						Sub - Total amount: 
-						<strong>$6,487</strong>
-					</span>
-					
-					<span>
-						VAT: 
-						<strong>12.9%</strong>
-					</span>
-					
-					<span>
-						Discount: 
-						<strong>-----</strong>
-					</span>
-					
-					<hr />
-					
-					<span>
-						Grand Total: 
-						<strong>$7,304</strong>
-					</span>
-				</div>
-				
-				<div class="invoice-bill-info">
-					<address>
-						795 Park Ave, Suite 120<br />
-						San Francisco, CA 94107<br /> 
-						P: (234) 145-1810 <br />
-						Full Name <br />
-						<a href="">first.last@email.com</a>
-					</address>
-				</div>
-				
 			</div>
 			
 		</section>
-		
-	</div>
-</div>
