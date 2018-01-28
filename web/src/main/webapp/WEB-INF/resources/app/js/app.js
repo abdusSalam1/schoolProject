@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('xenon-app', [
+var app = angular.module('sms-app', [
 	'ngCookies',
 
 	'ui.router',
