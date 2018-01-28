@@ -21,7 +21,7 @@
 	<div class="panel-body">
 		
 		<!-- Auto initialization -->
-		<form action="data/upload-file.php" class="dropzone"></form>
+		<form action="/static/resources/data/upload-file.php" class="dropzone"></form>
 		
 	</div>
 </div>
@@ -43,7 +43,7 @@
 				var i = 1,
 					$example_dropzone_filetable = $("#example-dropzone-filetable"),
 					example_dropzone = $("#advancedDropzone").dropzone({
-					url: 'data/upload-file.php',
+					url: '/static/resources/data/upload-file.php',
 					
 					// Events
 					addedfile: function(file)

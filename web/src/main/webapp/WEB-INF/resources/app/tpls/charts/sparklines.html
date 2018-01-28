@@ -341,7 +341,7 @@
 						var source = new DevExpress.data.DataSource({
 							load: function(loadOptions) {
 								var d = $.Deferred();
-								$.getJSON('data/sparklineResourceData.json').done(function(data) {
+								$.getJSON('/static/resources/data/sparklineResourceData.json').done(function(data) {
 									var filteredData = DevExpress.data
 									  .query(data)
 									  .filter(loadOptions.filter)

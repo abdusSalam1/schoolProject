@@ -333,7 +333,7 @@
 									minimumInputLength: 1,
 									placeholder: 'Search',
 									ajax: {
-										url: "data/select2-remote-data.php",
+										url: "/static/resources/data/select2-remote-data.php",
 										dataType: 'json',
 										quietMillis: 100,
 										data: function(term, page) {
@@ -867,7 +867,7 @@
 										queryTokenizer: Bloodhound.tokenizers.whitespace,
 										limit: 10,
 										prefetch: {
-											url: 'data/names.json',
+											url: '/static/resources/data/names.json',
 											filter: function(list) 
 											{
 												return $.map(list, function(name) { return { name: name }; });
@@ -910,7 +910,7 @@
 										queryTokenizer: Bloodhound.tokenizers.whitespace,
 										// You can also prefetch suggestions
 										// prefetch: 'data/typeahead-generate.php',
-										remote: 'data/typeahead-generate.php?q=%QUERY'
+										remote: '/static/resources/data/typeahead-generate.php?q=%QUERY'
 									});
 									
 									name_randomizer.initialize();
@@ -944,7 +944,7 @@
 									var harry_potter_movies = new Bloodhound({
 										datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
 										queryTokenizer: Bloodhound.tokenizers.whitespace,
-										remote: 'data/typeahead-hp-movies.php?q=%QUERY'
+										remote: '/static/resources/data/typeahead-hp-movies.php?q=%QUERY'
 									});
 									
 									harry_potter_movies.initialize();
