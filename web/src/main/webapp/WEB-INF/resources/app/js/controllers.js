@@ -102,46 +102,4 @@ angular.module('xenon.controllers', [])
     public_vars.$sidebarMenu = public_vars.$body.find('.sidebar-menu');
     $timeout(setup_sidebar_menu, 1);
     ps_init(); // perfect scrollbar for sidebar
-})
-    .controller('UIModalsCtrl', function ($scope, $rootScope, $modal, $sce) {
-    // Open Simple Modal
-    $scope.openModal = function (modal_id, modal_size, modal_backdrop) {
-        $rootScope.currentModal = $modal.open({
-            templateUrl: modal_id,
-            size: modal_size,
-            backdrop: typeof modal_backdrop == 'undefined' ? true : modal_backdrop
-        });
-    };
-    // Loading AJAX Content
-    $scope.openAjaxModal = function (modal_id, url_location) {
-        $rootScope.currentModal = $modal.open({
-            templateUrl: modal_id,
-            resolve: {
-                ajaxContent: function ($http) {
-                    return $http.get(url_location).then(function (response) {
-                        $rootScope.modalContent = $sce.trustAsHtml(response.data);
-                    }, function (response) {
-                        $rootScope.modalContent = $sce.trustAsHtml('<div class="label label-danger">Cannot load ajax content! Please check the given url.</div>');
-                    });
-                }
-            }
-        });
-        $rootScope.modalContent = $sce.trustAsHtml('Modal content is loading...');
-    }
-})
-    .controller('PaginationDemoCtrl', function ($scope) {
-    $scope.totalItems = 64;
-    $scope.currentPage = 4;
-
-    $scope.setPage = function (pageNo) {
-        $scope.currentPage = pageNo;
-    };
-
-    $scope.pageChanged = function () {
-        console.log('Page changed to: ' + $scope.currentPage);
-    };
-
-    $scope.maxSize = 5;
-    $scope.bigTotalItems = 175;
-    $scope.bigCurrentPage = 1;
 });
