@@ -1,57 +1,18 @@
 'use strict';
 
 angular.module('xenon.controllers', [])
-    .controller('LoginCtrl', function ($scope, $rootScope) {
-    $rootScope.isLoginPage = true;
-    $rootScope.isLightLoginPage = false;
-    $rootScope.isLockscreenPage = false;
-    $rootScope.isMainPage = false;
-})
-    .controller('LoginLightCtrl', function ($scope, $rootScope) {
-    $rootScope.isLoginPage = true;
-    $rootScope.isLightLoginPage = true;
-    $rootScope.isLockscreenPage = false;
-    $rootScope.isMainPage = false;
-})
-    .controller('LockscreenCtrl', function ($scope, $rootScope) {
-    $rootScope.isLoginPage = false;
-    $rootScope.isLightLoginPage = false;
-    $rootScope.isLockscreenPage = true;
-    $rootScope.isMainPage = false;
-})
     .controller('MainCtrl', function ($scope, $rootScope, $location, $layout, $layoutToggles, $pageLoadingBar, Fullscreen) {
     $rootScope.isLoginPage = false;
-    $rootScope.isLightLoginPage = false;
-    $rootScope.isLockscreenPage = false;
     $rootScope.isMainPage = true;
     $rootScope.layoutOptions = {
-        horizontalMenu: {
-            isVisible: false,
-            isFixed: true,
-            minimal: false,
-            clickToExpand: false,
-
-            isMenuOpenMobile: false
-        },
         sidebar: {
             isVisible: true,
             isCollapsed: false,
             toggleOthers: true,
             isFixed: true,
             isRight: false,
-
             isMenuOpenMobile: false,
             userProfile: true
-        },
-        chat: {
-            isOpen: false,
-        },
-        settingsPane: {
-            isOpen: false,
-            useAnimation: true
-        },
-        container: {
-            isBoxed: false
         },
         skins: {
             sidebarMenu: '',
@@ -61,7 +22,6 @@ angular.module('xenon.controllers', [])
         pageTitles: true,
         userInfoNavVisible: true
     };
-
     $layout.loadOptionsFromCookies(); // remove this line if you don't want to support cookies that remember layout changes
 
     $scope.updatePsScrollbars = function () {
@@ -119,7 +79,6 @@ angular.module('xenon.controllers', [])
     // Full screen feature added in v1.3
     $scope.isFullscreenSupported = Fullscreen.isSupported();
     $scope.isFullscreen = !!Fullscreen.isEnabled();
-
     $scope.goFullscreen = function () {
         if (Fullscreen.isEnabled())
             Fullscreen.cancel();

@@ -2,7 +2,6 @@
 
 angular.module('xe.widgets', []).
 	directive('xeCounter', function(){
-		
 		return {
 			restrict: 'EAC',
 			link: function(scope, el, attrs)
