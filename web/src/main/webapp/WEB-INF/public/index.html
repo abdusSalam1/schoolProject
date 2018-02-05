@@ -25,6 +25,7 @@
 		// Vars (paths without trailing slash)
 		templatesDir: 'static/resources/app/tpls',
 		assetsDir: 'static/resources/assets',
+		appDir: 'static/resources/app',
 		// Methods
 		templatePath: function(view_name)
 		{
@@ -33,7 +34,11 @@
 		assetPath: function(file_path)
 		{
 			return this.assetsDir + '/' + file_path;
-		}
+		},
+        appPath: function(file_path)
+        {
+            return this.appDir + '/' + file_path;
+        }
 	};
 	</script>
 
@@ -67,8 +72,6 @@
 	<script src="/static/resources/app/js/factory.js"></script>
 	<script src="/static/resources/app/js/services.js"></script>
 	<script src="/static/resources/app/js/service/communicationService.js"></script>
-	<script src="/static/resources/app/js/controllers/instituteController.js"></script>
-	<script src="/static/resources/app/js/service/instituteService.js"></script>
 	<!-- JavaScripts initializations and stuff -->
 	<script src="/static/resources/app/js/xenon-custom.js"></script>
 

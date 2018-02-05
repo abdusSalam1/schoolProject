@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('sms-app', [
+var smsApp = angular.module('sms-app', [
 	'ngCookies',
 
 	'ui.router',
@@ -17,7 +17,7 @@ var app = angular.module('sms-app', [
 	'FBAngular'
 ]);
 
-app.run(function()
+smsApp.run(function()
 {
 	// Page Loading Overlay
 	public_vars.$pageLoadingOverlay = jQuery('.page-loading-overlay');
@@ -29,8 +29,9 @@ app.run(function()
 });
 
 
-app.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASSETS){
+smsApp.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASSETS, $controllerProvider){
 
+    smsApp.controller = $controllerProvider.register;
 	$urlRouterProvider.otherwise('/app/dashboard-variant-4');
 
 	$stateProvider.
@@ -785,14 +786,16 @@ app.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASS
 		state('login', {
 			url: '/login',
 			templateUrl: appHelper.templatePath('login'),
-			controller: 'LoginCtrl',
+			controller: 'loginController',
 			resolve: {
 				resources: function($ocLazyLoad){
 					return $ocLazyLoad.load([
+						appHelper.appPath("js/controllers/loginController.js"),
+                        appHelper.appPath("js/service/instituteService.js"),
 						ASSETS.forms.jQueryValidate,
-						ASSETS.extra.toastr,
+						ASSETS.extra.toastr
 					]);
-				},
+				}
 			}
 		}).
 		state('login-light', {
@@ -823,7 +826,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASS
 });
 
 
-app.constant('ASSETS', {
+smsApp.constant('ASSETS', {
 	'core': {
 		'bootstrap': appHelper.assetPath('js/bootstrap.min.js'), // Some plugins which do not support angular needs this
 

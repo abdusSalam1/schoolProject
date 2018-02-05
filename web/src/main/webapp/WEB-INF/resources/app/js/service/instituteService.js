@@ -10,4 +10,4 @@
     }
     app.service("instituteService", ["$communicationService", instituteService]);
 })
-    (app);
+    (smsApp);

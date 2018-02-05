@@ -17,4 +17,4 @@ self.getInstitutes = function () {
 };
     }
 app.controller("instituteController", ['instituteService', '$q', '$scope', instituteController]);
-}(app));
+}(smsApp));
