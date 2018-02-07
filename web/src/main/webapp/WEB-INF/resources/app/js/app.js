@@ -21,8 +21,9 @@ smsApp.run(function() {
 });
 
 
-smsApp.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASSETS, $controllerProvider){
+smsApp.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, ASSETS, $controllerProvider, $provide){
     smsApp.controller = $controllerProvider.register;
+    smsApp.service = $provide.service;
 	$urlRouterProvider.otherwise('/app/dashboard-variant-4');
 	$stateProvider.
 		// Main Layout Structure

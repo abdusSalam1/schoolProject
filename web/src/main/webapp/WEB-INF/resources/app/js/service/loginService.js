@@ -4,8 +4,8 @@
 (function (app) {
     function loginService($communicationService) {
 
-        this.getParentGroups = function (qamodels) {
-            return $communicationService.get('/institutions/interest-test' , qamodels);
+        this.authenticateUser = function (credentials) {
+            return $communicationService.post('/login' , credentials);
         };
     }
     app.service("loginService", ["$communicationService", loginService]);

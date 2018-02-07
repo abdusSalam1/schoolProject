@@ -1,8 +1,8 @@
 package com.sms.config;
 
-import com.sms.repository.UniversityRepository;
-import com.sms.service.InstituteService;
-import com.sms.service.InstituteServiceImpl;
+import com.sms.repository.LoginRepository;
+import com.sms.service.LoginService;
+import com.sms.service.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,9 +15,11 @@ import org.springframework.context.annotation.Import;
 @Import(PersistenceConfiguration.class)
 public class ServiceConfiguration {
 
+
+
     @Bean
     @Autowired
-    public InstituteService employeeService(UniversityRepository universityRepository) {
-        return new InstituteServiceImpl(universityRepository);
+    public LoginService loginService(LoginRepository loginRepository) {
+        return new LoginServiceImpl(loginRepository);
     }
 }

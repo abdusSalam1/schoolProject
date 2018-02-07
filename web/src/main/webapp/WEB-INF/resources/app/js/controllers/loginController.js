@@ -1,10 +1,16 @@
 (function (app) {
-    function loginController( $q, $scope, $rootScope) {
+    function loginController(loginService, $q, $scope, $rootScope) {
         var self = this;
         $rootScope.isLoginPage        = true;
         $rootScope.isMainPage         = false;
         $scope.credentials = {email: '', password: ''};
 
+       self.authenticateUser = function (credentials) {
+           loginService.authenticateUser(credentials).then(function (res) {
+               console.log(res);
+           });
+       };
+
     }
-    app.controller("loginController", [ '$q', '$scope', '$rootScope', loginController]);
+    app.controller("loginController", ['loginService', '$q', '$scope', '$rootScope', loginController]);
 }(smsApp));
