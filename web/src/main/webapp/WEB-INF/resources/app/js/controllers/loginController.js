@@ -6,11 +6,13 @@
         $scope.credentials = {email: '', password: ''};
 
        self.authenticateUser = function (credentials) {
-           loginService.authenticateUser(credentials).then(function (res) {
-               console.log(res);
-           });
-       };
-
+           isValid = $scope.loginForm.$valid;
+           if (isValid) {
+               loginService.authenticateUser(credentials).then(function (res) {
+                   console.log(res);
+               });
+           };
+       }
     }
     app.controller("loginController", ['loginService', '$q', '$scope', '$rootScope', loginController]);
 }(smsApp));
