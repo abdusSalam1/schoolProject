@@ -28,6 +28,9 @@ public class PersistenceConfiguration {
     @Autowired
     private MongoClient mongoClient;
 
+    @Autowired
+    private LoginDORepository loginDORepository;
+
     @Bean
     @Autowired
     public LoginRepository loginRepository(LoginDORepository loginDORepository) {

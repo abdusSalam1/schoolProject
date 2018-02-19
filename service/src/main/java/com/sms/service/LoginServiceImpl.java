@@ -12,4 +12,9 @@ public class LoginServiceImpl implements LoginService {
     public LoginServiceImpl(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
     }
+
+    @Override
+    public boolean authenticate(String email, String password) {
+        return loginRepository.authenticate(email,password);
+    }
 }

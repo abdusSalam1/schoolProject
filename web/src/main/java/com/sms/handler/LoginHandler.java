@@ -1,5 +1,6 @@
 package com.sms.handler;
 
+import com.sms.domain.User;
 import com.sms.model.LoginResponseModel;
 import com.sms.model.UserModel;
 import com.sms.service.LoginService;
@@ -16,6 +17,12 @@ public class LoginHandler {
     }
 
     public LoginResponseModel authenticate(UserModel userModel) {
-       return new LoginResponseModel("hello");
+        boolean authenticated = loginService.authenticate(userModel.getEmail(),userModel.getPassword());
+        if (authenticated){
+            return new LoginResponseModel("ok");
+        }
+        else {
+            return new LoginResponseModel("not authenticated");
+        }
     }
 }
