@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,5 +28,11 @@ public class InstitutionController {
     @RequestMapping(value = "/interest-test", method = RequestMethod.GET)
     public List<InstituteModel> findInstituitionsByInterestTest(@RequestBody List<QAModel> qaModels) {
         return institutionHandler.findInstituitionsByInterestTest(qaModels);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/interest", method = RequestMethod.GET)
+    public List<InstituteModel> find() {
+        return new ArrayList<>();
     }
 }
