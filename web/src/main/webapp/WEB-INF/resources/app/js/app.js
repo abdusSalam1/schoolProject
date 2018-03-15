@@ -63,7 +63,34 @@ smsApp.config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, 
 					]);
 				}
 			}
-		});
+		}).
+	state('app.student', {
+        url: '/student',
+        templateUrl: appHelper.templatePath('student'),
+        controller: '',
+        resolve: {
+            resources: function($ocLazyLoad){
+                return $ocLazyLoad.load([
+                    ASSETS.forms.jQueryValidate,
+                    ASSETS.extra.toastr
+                ]);
+            },
+            jqui: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                    files: ASSETS.core.jQueryUI
+                });
+            },
+            datepicker: function($ocLazyLoad){
+                return $ocLazyLoad.load([
+                    ASSETS.forms.datepicker
+                ]);
+            },inputmask: function($ocLazyLoad){
+                return $ocLazyLoad.load([
+                    ASSETS.forms.inputmask
+                ]);
+            }
+        }
+    });
 });
 
 

@@ -1,0 +1,194 @@
+<page-title ng-if="layoutOptions.pageTitles" title="Student"
+            description="create/delete/update/view students"></page-title>
+
+<div class="row">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <tabset class="nav-tabs-justified">
+                <tab heading="Create Student">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Student Creation Form</h3>
+                                    <div class="panel-options">
+                                        <a href="" data-toggle="panel">
+                                            <span class="collapse-icon">&ndash;</span>
+                                            <span class="expand-icon">+</span>
+                                        </a>
+                                        <a href="" data-toggle="remove">
+                                            &times;
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <form role="form" class="form-horizontal" role="form">
+                                        <div class="row col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label pull-left" style="margin-left: 50px"
+                                                           for="firstName">First
+                                                        Name</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <input type="text" class="form-control " id="firstName"
+                                                               placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class=" control-label pull-left" style="margin-left: 50px"
+                                                           for="lastName">Last
+                                                        Name</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <input type="text" class="form-control" id="lastName"
+                                                               placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label pull-left" style="margin-left: 50px">Birth
+                                                        Date</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control datepicker "
+                                                                   placeholder="Date" data-format="D, dd MM yyyy">
+
+                                                            <div class="input-group-addon">
+                                                                <a href=""><i class="linecons-calendar"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class=" control-label pull-left" style="margin-left: 50px"
+                                                           for="lastName">Father
+                                                        Name</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <input type="text" class="form-control " id="fatherName"
+                                                               placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label pull-left" style="margin-left: 50px">Father
+                                                        CNIC</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <input type="text" class="form-control " id="fathercnic"
+                                                               placeholder="Father CNIC" inputmask
+                                                               data-mask="cnic">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class=" control-label pull-left" style="margin-left: 50px">Home
+                                                        Addreess</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <input type="text" class="form-control" id="address"
+                                                               placeholder="Home Address">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label pull-left" style="margin-left: 50px">Home Phone</label>
+                                                    <div class=" col-sm-8 pull-right">
+                                                        <input type="text" placeholder="Home Phone" class="form-control" inputmask
+                                                               data-mask="phone"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class=" control-label pull-left" style="margin-left: 50px">City</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <input type="text" class="form-control" id="city"
+                                                               placeholder="Home Address">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label pull-left" style="margin-left: 50px">Country</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                            <input type="text" class="form-control " placeholder="Country">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class=" control-label pull-left" style="margin-left: 50px"
+                                                           for="lastName">Class</label>
+                                                    <div class="col-sm-8 pull-right">
+                                                        <input type="text" class="form-control " id="class"
+                                                               placeholder="Class">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row col-sm-12">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label pull-left" style="margin-left: 50px">Gender</label>
+                                                    <div class=" row col-sm-8 pull-right">
+                                                        <div class="radio col-sm-6">
+                                                            <label>
+                                                                <input type="radio" name="radio-1" checked>
+                                                                male
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio col-sm-6">
+                                                            <label>
+                                                                <input type="radio" name="radio-1">
+                                                                female
+                                                            </label>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="row col-sm-12 ">
+                                            <div class="form-group pull-right">
+                                                <button class="btn btn-red ">Cancel</button>
+                                                <button class="btn btn-success ">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Profile">
+                    <p>Fulfilled direction use continual set him propriety continued. Saw met applauded favourite
+                        deficient engrossed concealed and her. Concluded boy perpetual old supposing. Farther related
+                        bed and passage comfort civilly. Dashwoods see frankness objection abilities the. As hastened oh
+                        produced prospect formerly up am. Placing forming nay looking old married few has. Margaret
+                        disposed add screened rendered six say his striking confined. </p>
+                    <p>When be draw drew ye. Defective in do recommend suffering. House it seven in spoil tiled court.
+                        Sister others marked fat missed did out use. Alteration possession dispatched collecting
+                        instrument travelling he or on. Snug give made at spot or late that mr. </p>
+                </tab>
+            </tabset>
+
+
+        </div>
+    </div>
+</div>

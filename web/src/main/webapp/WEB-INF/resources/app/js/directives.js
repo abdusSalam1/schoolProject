@@ -684,13 +684,17 @@ angular.module('xenon.directives', []).
 				switch(mask.toLowerCase())
 				{
 					case "phone":
-						mask = "(999) 999-9999";
+						mask = "(9999) 999-9999";
 						break;
+
+                    case "cnic":
+                        mask = "99999-9999999-9";
+                        break;
 
 					case "currency":
 					case "rcurrency":
 
-						var sign = attrDefault($this, 'sign', '$');;
+						var sign = attrDefault($this, 'sign', '$');
 
 						mask = "999,999,999.99";
 

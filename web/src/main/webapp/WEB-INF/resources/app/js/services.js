@@ -83,7 +83,7 @@ angular.module('xenon.services', []).
 
 		this.prepareSidebarMenu = function() {
 			var dashboard    = this.addItem('Dashboard', 		'/app/dashboard-/variant-4', 			'linecons-cog');
-			// var layouts      = this.addItem('Layout & Skins',	'/app/layout-and-skins',	'linecons-desktop');
+			var students      = this.addItem('Student',	'/app/student',	'fa-graduation-cap');
 			// var ui_elements  = this.addItem('UI Elements', 		'/app/ui', 					'linecons-note');
 			// var widgets  	 = this.addItem('Widgets', 			'/app/widgets', 			'linecons-star');
 		//	var mailbox  	 = this.addItem('Mailbox', 			'/app/mailbox', 			'linecons-mail').setLabel('5', 'secondary', false);
